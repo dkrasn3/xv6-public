@@ -101,12 +101,36 @@ sys_mmap(void)
     return MMAP_FAILED;
 
   // TODO: your implementation
-  return MMAP_FAILED;
+  //eager flag called
+  if(flags == 0)
+  {
+    //get file struct
+    struct file *f = proc->ofile[fd];
+    //hold the string
+    char hold_c;
+
+    int hold = fileread(f, &hold_c , sizeof(f->readable)); 
+    //CHECK
+    cprintf("Eager was called and we got %c !", f->readable);
+
+    return MMAP_FAILED;
+  }
+  //Lazy flag called
+  else if(flags == 1)
+  {
+    //cprintf("sys_map is here to pirnt BOI %d lazy was called", fd);
+    return MMAP_FAILED;
+  }
+  else
+    return MMAP_FAILED;
+
+  //return MMAP_FAILED;
 }
 
   int
 handle_pagefault(addr_t va)
 {
   // TODO: your code here
+  //int handled = mappages(proc->pgdir, &va, proc->sz, (addr_t)proc->mmaptop, );
   return 0;
 }

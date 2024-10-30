@@ -7,6 +7,8 @@
 #include "proc.h"
 #include "spinlock.h"
 
+//#include <stdio.h>
+
 struct {
   struct spinlock lock;
   struct proc proc[NPROC];
@@ -74,6 +76,9 @@ found:
   p->context->rip = (addr_t)forkret;
 
   // TODO: hw4: initialize the mmap metadata for each new process
+  p->mmapcount = 0;
+  p->mmaptop = (char*)MMAPBASE;
+  //p->mmaps;
 
   return p;
 }
