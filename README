@@ -5,6 +5,17 @@ but is implemented for a modern x86-based multiprocessor using ANSI C.
 xv6-64 is a 64-bit port of MIT's xv6, by Anthony Shelton and
 Jakob Eriksson, for use in UIC's Operating Systems curriculum.
 
+
+IMPLEMENTATION
+Show knowledge of Linux kernel and be able to run the files in order such as
+-splash-screen boot sector
+-device drivers for console and display
+-mmap() – eager and lazy
+-page table magic – deduplication and copy-on-write
+-implementing signals
+-ISO9660 file system
+
+
 ACKNOWLEDGMENTS
 
 xv6 is inspired by John Lions's Commentary on UNIX 6th Edition (Peer
